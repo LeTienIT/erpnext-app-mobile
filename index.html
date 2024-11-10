@@ -54,7 +54,9 @@
 
     <!-- Nội dung trang web -->
     <h1>ERPNext App</h1>
-    <button id="download-button">Tải về ERPNext App</button>
+    <a id="download-button" href="./apk/app-release.apk" download>
+        <button>Tải về ERPNext App</button>
+    </a>
     <p>Hướng dẫn cài đặt:</p>
     <ul>
         <li>Nhấn vào nút tải về để tải file .apk</li>
@@ -72,15 +74,13 @@
 
             if (/android/i.test(userAgent)) {
                 // Thiết bị Android
-                downloadButton.href = "apk/app-release.apk";
-                downloadButton.disabled = false;
+                downloadButton.style.display = "inline";
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 // Thiết bị iOS
-                downloadButton.disabled = true;
+                downloadButton.style.display = "none"; // Ẩn nút tải về
                 iosAlert.style.display = "flex";
             } else {
-                downloadButton.disabled = false;
-                downloadButton.href = "apk/app-release.apk"; 
+                downloadButton.style.display = "inline"; 
             }
         }
 
