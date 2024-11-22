@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ERPNext App</title>
+    <link rel="stylesheet" href="styler.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -44,27 +45,74 @@
 </head>
 <body>
 
-    <!-- Hộp thoại thông báo iOS -->
-    <div id="ios-alert">
-        <div class="alert-content">
-            <p>Ứng dụng chỉ dành cho Android, hiện chưa có phiên bản cho iOS.</p>
-            <button onclick="closeIosAlert()">Đóng</button>
+    <div class="sky"></div>
+
+    <div class="glowing-text">
+        <div class="main">  
+            <!-- Hộp thoại thông báo iOS -->
+            <div id="ios-alert">
+                <div class="alert-content">
+                    <p>Ứng dụng chỉ dành cho Android, hiện chưa có phiên bản cho iOS.</p>
+                    <button onclick="closeIosAlert()">Đóng</button>
+                </div>
+            </div>
+    
+            <a id="download-button" href="./apk/app-release.apk" download>
+                <button class="btn" type="button" >
+                    <strong>TẢI ERP APP (APK)</strong>
+                    <div id="container-stars">
+                        <div id="stars"></div>
+                    </div>
+        
+                    <div id="glow">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                </button>
+            </a>
         </div>
     </div>
-
-    <!-- Nội dung trang web -->
-    <h1>ERPNext App</h1>
-    <a id="download-button" href="./apk/app-release.apk" download>
-        <button>Tải về ERPNext App</button>
-    </a>
-    <p>Hướng dẫn cài đặt:</p>
-    <ul>
-        <li>Nhấn vào nút tải về để tải file .apk</li>
-        <li>Cho phép cài đặt ứng dụng từ nguồn không xác định trong phần cài đặt bảo mật của thiết bị.</li>
-        <li>(Kiểu cùng mớ rau mà vào siêu thị và ra chợ mua)</li>
-        <li>Tiến hành cài đặt và mở ứng dụng ERPNext.</li>
-    </ul>
-
+    <div id="load_sign">
+        <svg class="heart" viewBox="-5 -5 278 56" version="1.1" id="svg5" xmlns="http://www.w3.org/2000/svg">
+            <filter>
+                <feGaussianBlur stdDeviation="1.6"></feGaussianBlur>
+            </filter>
+            <g transform="translate(29.1 -127.42)" id="layer1">
+                <path
+                pathLength="1"
+                d="M-28.73 167.2c26.43 9.21 68.46-9.46 85.45-12.03 18.45-2.78 32.82 4.86 28.75 9.83-3.82 4.66-25.77-21.18-14.81-31.5 9.54-8.98 17.64 10.64 16.42 17.06-1.51-6.2 2.95-26.6 14.74-22.11 11.7 4.46-4.33 49.03-15.44 44.08-6.97-3.1 15.44-16.26 26.1-16 23.03.56 55.6 27.51 126.63 3.36"
+                id="line"></path>
+            </g>
+            <g transform="translate(29.1 -127.42)" id="layer2">
+                <path
+                pathLength="1"
+                d="M-28.73 167.2c26.43 9.21 68.46-9.46 85.45-12.03 18.45-2.78 32.82 4.86 28.75 9.83-3.82 4.66-25.77-21.18-14.81-31.5 9.54-8.98 17.64 10.64 16.42 17.06-1.51-6.2 2.95-26.6 14.74-22.11 11.7 4.46-4.33 49.03-15.44 44.08-6.97-3.1 15.44-16.26 26.1-16 23.03.56 55.6 27.51 126.63 3.36"
+                id="point"
+                filter="url(#blur)"></path>
+            </g>
+        </svg>
+    </div>
+    <div id="hoden">
+        <div class="loader">
+            <div class="blackhole">
+            <div class="blackhole-circle"></div>
+            <div class="blackhole-disc"></div>
+            </div>
+        
+            <div class="curve">
+                <svg viewBox="0 0 500 500">
+                    <path id="loading" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97"></path>
+                    <text width="500">
+                        <textPath xlink:href="#loading" color="red">
+                            LÊ ĐẮC TIẾN
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
+        </div>
+        
+    </div>
+    
     <script>
         // Kiểm tra thiết bị
         function detectDevice() {
